@@ -6,22 +6,15 @@ import {
   Box,
   Link
 } from "@chakra-ui/react";
-
-import Card from "@/components/Card";
-
 import { gql } from "@apollo/client";
 import client from "@/lib/apolloClient";
+import { ThreeColumn } from "@/components/PostTemplate";
 
-export default function Home({ posts }) {
-
-  console.log(posts);
+export default function Home({ sixPosts }) {
 
   return (
     <>
-      <Card />
-
-
-
+      <ThreeColumn post={sixPosts} />
     </>
   );
 }
@@ -29,8 +22,22 @@ export default function Home({ posts }) {
 export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`query {
-        posts(orderBy: createdAt_DESC) {
+        posts(orderBy: createdAt_DESC,stage:PUBLISHED) {
           title
+          slug
+          excerpt
+          publishedAt
+          content {
+            html
+            raw
+          }
+          thumbnail {
+            url
+          }
+          categories {
+            slug
+            name
+          }
         }
       }      
   `
@@ -38,9 +45,10 @@ export async function getStaticProps() {
 
   const { posts } = data;
 
+  const sixPosts = posts.slice(0, 6);
   return {
     props: {
-      posts
+      sixPosts
     }
   };
 }
