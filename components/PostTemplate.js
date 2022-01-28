@@ -44,11 +44,19 @@ const CommonCard = ({ post }) => {
             </Box>
             <Stack p={3}>
                 <Flex gap={2} fontSize="sm">
-                    <Text
-                        textTransform="uppercase"
-                        fontWeight="semibold"
-                        color="light.400"
-                    >{categoryName}</Text>
+                    <NextLink href={`/category/${categorySlug}`}>
+                        <a>
+                            <Text
+                                textTransform="uppercase"
+                                fontWeight="semibold"
+                                fontFamily="monospace"
+                                color="light.400"
+                            >
+                                {categoryName}
+
+                            </Text>
+                        </a>
+                    </NextLink>
                     <Text><CalcReadingTime date={publishedAt} /></Text>
                 </Flex>
                 <NextLink href={`/post/${slug}`}>
@@ -65,7 +73,7 @@ const CommonCard = ({ post }) => {
                 </NextLink>
                 <Text noOfLines={3} color="light.500">{excerpt}</Text>
             </Stack>
-        </Box>
+        </Box >
     );
 };
 
