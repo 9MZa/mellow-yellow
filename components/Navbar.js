@@ -261,14 +261,14 @@ const NAV_ITEMS = [
         label: "Category",
         children: [
             {
-                label: "Explore Design Work",
+                label: "Basic",
                 subLabel: "Trending Design to inspire you",
-                href: "#",
+                href: "/category/basic",
             },
             {
-                label: "New & Noteworthy",
+                label: "Learn",
                 subLabel: "Up-and-coming Designers",
-                href: "#",
+                href: "/category/learn",
             },
         ],
     },
