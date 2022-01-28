@@ -10,7 +10,7 @@ import {
 import Card from "@/components/Card";
 
 import { gql } from "@apollo/client";
-import client from "../apolloClient";
+import client from "@/lib/apolloClient";
 
 export default function Home({ posts }) {
 
