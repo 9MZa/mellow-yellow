@@ -57,6 +57,7 @@ const CommonCard = ({ post }) => {
                             as="h2"
                             fontWeight="bold"
                             fontSize="xl"
+                            fontFamily="heading"
                         >
                             {title}
                         </Heading>

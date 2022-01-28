@@ -34,6 +34,10 @@ const theme = extendTheme({
       900: "#FFFFFF"
     }
   },
+  fonts: {
+    heading: "Work Sans, sans-serif",
+    body: "Open Sans, sans-serif",
+  },
 });
 
 
