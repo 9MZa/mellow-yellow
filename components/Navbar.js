@@ -60,6 +60,8 @@ export default function WithSubnavigation() {
                                 textAlign={useBreakpointValue({ base: "center", md: "left" })}
                                 fontFamily="heading"
                                 color="gray.800"
+                                fontSize="2xl"
+                                fontWeight="bold"
                             >
                                 Logo
                             </Text>
@@ -122,6 +124,7 @@ const DesktopNav = () => {
                                 fontSize={"sm"}
                                 fontWeight={500}
                                 color={linkColor}
+                                fontFamily="heading"
                                 _hover={{
                                     textDecoration: "none",
                                     color: linkHoverColor,
@@ -167,10 +170,11 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
                     <Text
                         transition={"all .3s ease"}
                         _groupHover={{ color: "pink.400" }}
+                        fontFamily="heading"
                         fontWeight={500}>
                         {label}
                     </Text>
-                    <Text fontSize={"sm"}>{subLabel}</Text>
+                    <Text fontFamily="body" fontSize={"sm"}>{subLabel}</Text>
                 </Box>
                 <Flex
                     transition={"all .3s ease"}
