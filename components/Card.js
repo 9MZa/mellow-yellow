@@ -144,7 +144,7 @@ export const Big = ({ post }) => {
                 spacing={5}
             >
                 <Heading> {title} </Heading>
-                <Text color="light.100"> {excerpt} </Text>
+                <Text color="light.100" noOfLines={3} > {excerpt} </Text>
             </Stack>
             <Box
                 w="50%"
