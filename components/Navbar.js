@@ -15,6 +15,10 @@ import {
     useDisclosure,
     useBreakpointValue,
     Heading,
+    UnorderedList,
+    ListItem,
+    VStack,
+    HStack
 } from "@chakra-ui/react";
 
 
@@ -38,7 +42,8 @@ export default function Navbar() {
         <Flex
             maxW="container.lg"
             bg="white"
-            minH={"60px"}
+            pt={2}
+            pb={5}
             mx="auto"
             justifyContent="space-between"
         >
@@ -50,13 +55,30 @@ export default function Navbar() {
 
 const DesktopNav = () => {
     return (
-        <Flex>
+        <HStack
+            spacing={10}
+            fontWeight="medium"
+            color="dark.100"
+        >
             {NAV_ITEMS.map((item, i) => {
                 return (
-                    <li key={i}> {item.label} </li>
+                    <NextLink
+                        key={i}
+                        href={item.href}
+                        passHref >
+                        <a>
+                            <Box
+                                _hover={{
+                                    color: "dark.500"
+                                }}
+                            >
+                                {item.label}
+                            </Box>
+                        </a>
+                    </NextLink>
                 );
             })}
-        </Flex>
+        </HStack>
     );
 };
 
@@ -73,6 +95,7 @@ const NAV_ITEMS = [
     },
     {
         label: "Category",
+        href: "#",
         children: [
             {
                 label: "Basic",

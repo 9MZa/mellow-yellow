@@ -27,7 +27,8 @@ export const ThreeColumn = ({ post }) => {
 export const SingleWide = ({ post }) => {
     return (
         <Box
-            my={10}
+            mt={20}
+            mb={10}
             maxW="container.lg"
             mx="auto"
         >
