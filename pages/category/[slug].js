@@ -1,7 +1,7 @@
 import React from "react";
 import { gql } from "@apollo/client";
 import client from "@/lib/apolloClient";
-import { ThreeColumn } from "@/components/PostTemplate";
+import { ThreeColumn } from "@/components/PostLayout";
 
 export default function CategorySlug({ posts }) {
 
@@ -11,7 +11,6 @@ export default function CategorySlug({ posts }) {
         </div>
     );
 }
-
 
 export async function getStaticPaths() {
     const { data } = await client.query({

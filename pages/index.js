@@ -1,20 +1,17 @@
-import {
-  Container,
-  Heading,
-  Text,
-  Button,
-  Box,
-  Link
-} from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { gql } from "@apollo/client";
 import client from "@/lib/apolloClient";
-import { ThreeColumn } from "@/components/PostTemplate";
+import { ThreeColumn, SingleWide, SingleBig } from "@/components/PostLayout";
 
-export default function Home({ sixPosts }) {
+import Hero from "@/components/Hero";
+export default function Home({ sixPosts, singlePost, lastPost }) {
 
   return (
     <>
+      <Hero />
+      <SingleWide post={singlePost} />
       <ThreeColumn post={sixPosts} />
+      <SingleBig post={lastPost} />
     </>
   );
 }
@@ -38,6 +35,9 @@ export async function getStaticProps() {
             slug
             name
           }
+          createdBy {
+            name
+          }
         }
       }      
   `
@@ -45,10 +45,15 @@ export async function getStaticProps() {
 
   const { posts } = data;
 
-  const sixPosts = posts.slice(0, 6);
+  const singlePost = posts.slice(0, 1);
+  const sixPosts = posts.slice(1, 7);
+  const lastPost = posts.slice(7, 8);
+
   return {
     props: {
-      sixPosts
+      singlePost,
+      sixPosts,
+      lastPost
     }
   };
 }

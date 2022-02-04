@@ -1,7 +1,8 @@
 import { gql } from "@apollo/client";
 import client from "@/lib/apolloClient";
-import { ThreeColumn } from "@/components/PostTemplate";
+import { ThreeColumn } from "@/components/PostLayout";
 import { Box } from "@chakra-ui/react";
+
 const AllPost = ({ posts }) => {
   return (
     <>

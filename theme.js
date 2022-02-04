@@ -1,5 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
-
+import { Button } from "@/components/Button";
 const theme = extendTheme({
     colors: {
         primary: {
@@ -17,12 +17,23 @@ const theme = extendTheme({
             700: "#B3B3B3",
             800: "#E5E5E5",
             900: "#FFFFFF"
-        }
+        },
+        dark: {
+            100: "#666666",
+            200: "#4C4C4C",
+            500: "#2B2B2B",
+            700: "#1A1A1A",
+            800: "#151515",
+            900: "#000000"
+        },
     },
     fonts: {
         heading: "Work Sans, sans-serif",
         body: "Open Sans, sans-serif",
         monospace: "Fira Code, monospace"
+    },
+    components: {
+        Button
     },
     styles: {
         global: (props) => ({
@@ -31,13 +42,38 @@ const theme = extendTheme({
                 // color: props.colorMode === "dark" ? "white" : "gray.600",
                 // lineHeight: "tall",
             },
+
+            h1: {
+                fontSize: "5xl",
+                fontFamily: "heading",
+                fontWeight: "semibold"
+            },
+            h2: {
+                fontSize: "4xl",
+                fontFamily: "heading",
+                fontWeight: "semibold"
+            },
+            h3: {
+                fontSize: "3xl",
+                fontFamily: "heading",
+                fontWeight: "semibold"
+            },
             p: {
                 // color: props.colorMode === "dark" ? "teal.300" : "teal.500",
             },
             pre: {
-                border: "1px",
-                padding: "2rem",
-                bgColor: "red.50"
+                my: "5",
+                p: "5",
+                bgColor: "gray.100"
+            },
+            ul: {
+                py: "5",
+                px: "10"
+
+            },
+            ol: {
+                py: "5",
+                px: "10"
 
             }
         }),
