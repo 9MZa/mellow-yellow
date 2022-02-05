@@ -30,7 +30,8 @@ const theme = extendTheme({
     fonts: {
         heading: "Work Sans, sans-serif",
         body: "Open Sans, sans-serif",
-        monospace: "Fira Code, monospace"
+        monospace: "Fira Code, monospace",
+        blockquote: "STIX Two Text, serif",
     },
     components: {
         Button
@@ -64,7 +65,8 @@ const theme = extendTheme({
             pre: {
                 my: "5",
                 p: "5",
-                bgColor: "gray.100"
+                bgColor: "gray.100",
+                overflow: "scroll"
             },
             ul: {
                 py: "5",
@@ -75,7 +77,19 @@ const theme = extendTheme({
                 py: "5",
                 px: "10"
 
+            },
+            blockquote: {
+                my: "5",
+                p: "5",
+                color: "dark.200",
+                fontFamily: "blockquote",
+                fontSize: "3xl",
+                fontStyle: "italic",
+                bgColor: "primary.100",
+                borderColor: "primary.500",
+                borderLeftWidth: "4px",
             }
+
         }),
     },
 });

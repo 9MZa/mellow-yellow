@@ -55,7 +55,7 @@ export const Readmore = ({ url, text }) => {
                         opacity="0%"
                         transition="all .2s ease-out"
                         transform={"translateX(1px)"}
-                        color="primary.700"
+                        color="primary.500"
                         _groupHover={{
                             transform: "translateX(3px)",
                             opacity: "100%"

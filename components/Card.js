@@ -104,7 +104,7 @@ export const WideCard = ({ post }) => {
                     pt={8}
                     px={10}
                 >
-                    <Heading size="lg"> {title}</Heading>
+                    <Heading noOfLines={2} size="lg"> {title}</Heading>
                     <Text fontSize="md" color="light.100" noOfLines={2}> {excerpt} </Text>
                     <Flex justifyContent="space-between" >
                         <Text fontSize="sm" color="light.100">by {createdBy}</Text>
