@@ -20,6 +20,7 @@ const PostSlug = ({ posts }) => {
         <Box
             maxW="container.lg"
             mt={10}
+            mb={20}
             mx="auto"
         >
             <Box
