@@ -3,7 +3,9 @@ import {
     Flex,
     Stack,
     Heading,
-    Text
+    Text,
+    Grid,
+    GridItem
 } from "@chakra-ui/react";
 import NextImage from "next/image";
 import NextLink from "next/link";
@@ -85,12 +87,15 @@ export const WideCard = ({ post }) => {
     } = post[0];
 
     return (
-        <Box
-            boxShadow="xs"
-        >
-            <Flex>
+        <Box boxShadow="xs" >
+            <Flex
+                flexDirection={{
+                    base: "column-reverse",
+                    md: "row"
+                }}
+            >
                 <Stack
-                    w="55%"
+                    w="100%"
                     spacing={5}
                     pt={8}
                     px={10}
@@ -110,8 +115,8 @@ export const WideCard = ({ post }) => {
                 </Stack>
 
                 <Box
-                    w="45%"
                     h="250px"
+                    w="100%"
                     position="relative"
                 >
                     <NextImage
@@ -123,6 +128,7 @@ export const WideCard = ({ post }) => {
                     />
                 </Box>
             </Flex>
+
         </Box>
     );
 };
@@ -140,17 +146,18 @@ export const Big = ({ post }) => {
         <Flex
             alignItems="center"
             bgColor="gray.50"
+            flexDirection={{ base: "column-reverse", md: "row" }}
         >
             <Stack
-                w="50%"
-                p={10}
+                w={{ base: "100%", md: "50%" }}
+                p={{ base: 2, md: 10 }}
                 spacing={5}
             >
                 <Heading color="dark.500"> {title} </Heading>
                 <Text color="light.500" noOfLines={3} > {excerpt} </Text>
             </Stack>
             <Box
-                w="50%"
+                w={{ base: "100%", md: "50%" }}
             >
                 <Box
                     position="relative"

@@ -11,7 +11,7 @@ export const ThreeColumn = ({ post }) => {
 
     return (
         <Box maxW="container.lg" mx="auto" my={10}>
-            <SimpleGrid columns={3} rowGap={10} columnGap={10} >
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} rowGap={10} columnGap={10} >
                 {post.map((item, i) => {
                     return (
                         <CommonCard post={item} key={i} />

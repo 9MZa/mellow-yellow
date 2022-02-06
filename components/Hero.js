@@ -9,9 +9,10 @@ const HeroIndexPage = () => {
             <Box maxW="container.lg" mx="auto">
                 <Flex
                     alignItems="center"
+                    flexDirection={{ base: "column-reverse", md: "row" }}
                 >
                     <Box
-                        w="50%"
+                        w={{ base: "100%", md: "50%" }}
                     >
                         <Stack spacing={10}>
                             <Heading
@@ -26,8 +27,7 @@ const HeroIndexPage = () => {
                         </Stack>
                     </Box>
                     <Flex
-                        w="50%"
-
+                        w={{ base: "100%", md: "50%" }}
                         justifyContent="end"
                     >
                         <Box
