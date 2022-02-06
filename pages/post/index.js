@@ -27,6 +27,7 @@ export async function getStaticProps() {
             content {
               html
               raw
+              text
             }
             thumbnail {
               url

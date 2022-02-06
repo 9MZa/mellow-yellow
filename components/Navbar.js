@@ -29,7 +29,7 @@ const Logo = () => {
         <NextLink href="/">
             <a>
                 <Box>
-                    <Heading>Logo</Heading>
+                    <Heading>Name</Heading>
                     <Box p={0.5} bgColor="primary.500" />
                 </Box>
             </a>

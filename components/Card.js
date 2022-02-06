@@ -9,12 +9,14 @@ import NextImage from "next/image";
 import NextLink from "next/link";
 import CalcReadingTime from "@/lib/minuteRead";
 import { Readmore } from "@/components/ReadMore";
+import { CategoryText } from "@/components/CategoryTag";
 
 export const CommonCard = ({ post }) => {
     const {
         title,
         excerpt,
         publishedAt,
+        content: { text },
         slug,
         thumbnail: { url: thumbnail },
         categories: { name: categoryName, slug: categorySlug },
@@ -44,7 +46,7 @@ export const CommonCard = ({ post }) => {
                     fontSize="xs"
                     justifyContent="space-between"
                 >
-                    <NextLink href={`/category/${categorySlug}`}>
+                    {/* <NextLink href={`/category/${categorySlug}`}>
                         <a>
                             <Text
                                 textTransform="uppercase"
@@ -59,9 +61,10 @@ export const CommonCard = ({ post }) => {
 
                             </Text>
                         </a>
-                    </NextLink>
+                    </NextLink> */}
+                    <CategoryText name={categoryName} slug={categorySlug} />
                     <Text color="light.200">
-                        <CalcReadingTime date={publishedAt} />
+                        <CalcReadingTime data={text} />
                     </Text>
                 </Flex>
                 <NextLink href={`/post/${slug}`}>

@@ -5,14 +5,15 @@ const Footer = () => {
     return (
         <Box
             as="footer"
-            bg="white"
+            borderTopWidth={1}
             py={4}
         >
             <Box
                 maxW="container.lg"
                 mx="auto"
+                fontWeight="semibold"
             >
-                <Text>Footer</Text>
+                <Text>Name 2020 Copyright All Rights Reserved.</Text>
             </Box>
         </Box>
     );

@@ -41,6 +41,9 @@ export async function getStaticProps({ params }) {
                 categories {
                     name
                 }
+                content{
+                    text
+                }
                 thumbnail {
                     url
                 }

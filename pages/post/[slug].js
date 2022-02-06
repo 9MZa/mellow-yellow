@@ -1,16 +1,19 @@
 import dayjs from "dayjs";
 import { gql } from "@apollo/client";
 import client from "@/lib/apolloClient";
-import { Box, Heading, Stack, Text, Flex, HStack } from "@chakra-ui/react";
+import { Box, Heading, Stack, Text, Flex, HStack, Divider } from "@chakra-ui/react";
 import NextImage from "next/image";
 import DateFormat from "@/components/Date";
+import { CategoryBox } from "@/components/CategoryTag";
+import CalcReadingTime from "@/lib/minuteRead";
+
 const PostSlug = ({ posts }) => {
 
     const { title, publishedAt,
-        categories: { name: categoryName, slug: categroySlug },
+        categories: { name: categoryName, slug: categorySlug },
         thumbnail: { url: thumbnailURL },
-        createdBy: { name: createdBy },
-        content: { html: body }
+        createdBy: { name: createdName, picture: createdImage },
+        content: { html: body, text }
     } = posts[0];
 
     return (
@@ -23,14 +26,39 @@ const PostSlug = ({ posts }) => {
                 maxW="container.md"
                 mx="auto"
             >
-                <Stack spacing={5} my={10} textAlign="center">
+                <Stack
+                    spacing={14}
+                    my={10}
+                    textAlign="center"
+                >
+                    <CategoryBox slug={categorySlug} name={categoryName} />
                     <Heading size="2xl"> {title} </Heading>
-                    <HStack justifyContent="center" spacing={5}>
-                        <Text> by {createdBy} </Text>
-                        <Text>In {categoryName}</Text>
-                        <Text><DateFormat date={publishedAt} /></Text>
+                    <HStack
+                        justifyContent="center"
+                        spacing={5}
+                        color="dark.100"
+                        textTransform="capitalize"
+                    >
+                        <HStack>
+                            <Text color="light.500" >By</Text>
+                            <Text
+                                color="dark.200"
+                                fontWeight="semibold"
+                            >
+                                {createdName}
+                            </Text>
+                        </HStack>
+                        <HStack color="light.500" spacing={5}>
+                            <Text>•</Text>
+                            <Text><DateFormat date={publishedAt} /></Text>
+                            <Text>•</Text>
+                        </HStack>
+
+
+                        <Text color="light.500"><CalcReadingTime data={text} /></Text>
                     </HStack>
                 </Stack>
+                <Divider my={10} />
             </Box>
 
             <Box
@@ -45,7 +73,6 @@ const PostSlug = ({ posts }) => {
                     objectFit="cover"
                 />
             </Box>
-
             <Box
                 maxW="container.md"
                 mx="auto"
@@ -53,8 +80,6 @@ const PostSlug = ({ posts }) => {
             >
                 <div dangerouslySetInnerHTML={{ __html: body }} />
             </Box>
-
-
         </Box>
     );
 };
@@ -88,15 +113,18 @@ export async function getStaticProps({ params }) {
                 publishedAt
                 content {
                     html
+                    text
                 }
                 categories {
                     name
+                    slug
                 }
                 thumbnail {
                     url
                 }
                 createdBy{
                     name
+                    picture
                 }
             }
         }`,

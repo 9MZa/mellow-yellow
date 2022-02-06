@@ -18,9 +18,18 @@ export const Button = {
             py: 4,
         },
     },
-    // Two variants: outline and solid
+
     variants: {
         outline: {
+            border: "2px",
+            borderColor: "primary.500",
+            _hover: {
+                bgColor: "white",
+                borderColor: "primary.200",
+            },
+            _active: {
+                bgColor: "white"
+            },
 
         },
         solid: {
@@ -32,8 +41,6 @@ export const Button = {
                 bgColor: "primary.200",
                 borderColor: "primary.200",
                 color: "black"
-
-
             },
             _active: {
                 bgColor: "primary.500"
