@@ -3,6 +3,8 @@ import "focus-visible/dist/focus-visible";
 import { Global, css } from "@emotion/react";
 import Layout from "@/components/Layout";
 import theme from "../theme";
+import { DefaultSeo } from "next-seo";
+import SEO from "../next-seo.config";
 
 const GlobalStyles = css`
   /*
@@ -16,11 +18,11 @@ const GlobalStyles = css`
 
 `;
 
-
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <Layout>
+        <DefaultSeo {...SEO} />
         <Global styles={GlobalStyles} />
         <Component {...pageProps} />
       </Layout>

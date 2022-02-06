@@ -3,6 +3,7 @@ import { gql } from "@apollo/client";
 import client from "@/lib/apolloClient";
 import { ThreeColumn } from "@/components/PostLayout";
 import { HeroCategory } from "@/components/Hero";
+import { NextSeo } from "next-seo";
 
 export default function CategorySlug({ posts }) {
 
@@ -10,6 +11,14 @@ export default function CategorySlug({ posts }) {
 
     return (
         <>
+            <NextSeo
+                title={`${categoryName} Category`}
+                description={`Show post on ${categoryName}`}
+                openGraph={{
+                    title: `${categoryName} category`,
+                    description: `Show post on ${categoryName}`,
+                }}
+            />
             <HeroCategory name={categoryName} total={posts.length} />
             <ThreeColumn post={posts} />
         </>

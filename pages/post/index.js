@@ -3,6 +3,7 @@ import { gql } from "@apollo/client";
 import client from "@/lib/apolloClient";
 import { ThreeColumn } from "@/components/PostLayout";
 import { HeroPost } from "@/components/Hero";
+import { NextSeo } from "next-seo";
 import {
   Box,
   HStack
@@ -68,6 +69,14 @@ const AllPost = ({ posts }) => {
 
   return (
     <>
+      <NextSeo
+        title={title}
+        description="all post in mellow yellow"
+        openGraph={{
+          title: title,
+          description: "all post in mellow yellow",
+        }}
+      />
       <HeroPost title={title} subtitle={subtitle} total={posts.length} />
       <Box>
         <FilterButton btnName={buttons} filter={filter} />
