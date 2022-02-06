@@ -38,6 +38,8 @@ export const CommonCard = ({ post }) => {
                     alt={title}
                     position="absolute"
                     objectFit="cover"
+                    blurDataURL={thumbnail}
+                    placeholder="blur"
                 />
             </Box>
             <Stack p={3}>
@@ -46,22 +48,6 @@ export const CommonCard = ({ post }) => {
                     fontSize="xs"
                     justifyContent="space-between"
                 >
-                    {/* <NextLink href={`/category/${categorySlug}`}>
-                        <a>
-                            <Text
-                                textTransform="uppercase"
-                                fontWeight="semibold"
-                                fontFamily="monospace"
-                                color="primary.500"
-                                _hover={{
-                                    color: "primary.200"
-                                }}
-                            >
-                                {categoryName}
-
-                            </Text>
-                        </a>
-                    </NextLink> */}
                     <CategoryText name={categoryName} slug={categorySlug} />
                     <Text color="light.200">
                         <CalcReadingTime data={text} />
@@ -120,7 +106,13 @@ export const WideCard = ({ post }) => {
                     h="250px"
                     position="relative"
                 >
-                    <NextImage src={thumbnail} layout="fill" objectFit="cover" />
+                    <NextImage
+                        src={thumbnail}
+                        layout="fill"
+                        objectFit="cover"
+                        blurDataURL={thumbnail}
+                        placeholder="blur"
+                    />
                 </Box>
             </Flex>
         </Box>
@@ -157,7 +149,13 @@ export const Big = ({ post }) => {
                     w="full"
                     h="400px"
                 >
-                    <NextImage src={thumbnail} layout="fill" objectFit="cover" />
+                    <NextImage
+                        src={thumbnail}
+                        layout="fill"
+                        objectFit="cover"
+                        blurDataURL={thumbnail}
+                        placeholder="blur"
+                    />
                 </Box>
             </Box>
         </Flex >
