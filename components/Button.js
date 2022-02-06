@@ -36,6 +36,7 @@ export const Button = {
             bgColor: "primary.500",
             border: "2px",
             borderColor: "primary.500",
+            color: "dark.500",
             _hover: {
                 border: "2px",
                 bgColor: "primary.200",

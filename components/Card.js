@@ -47,9 +47,10 @@ export const CommonCard = ({ post }) => {
                     gap={2}
                     fontSize="xs"
                     justifyContent="space-between"
+                    color="dark.100"
                 >
                     <CategoryText name={categoryName} slug={categorySlug} />
-                    <Text color="light.200">
+                    <Text >
                         <CalcReadingTime data={text} />
                     </Text>
                 </Flex>
@@ -61,12 +62,13 @@ export const CommonCard = ({ post }) => {
                             fontSize="xl"
                             fontFamily="heading"
                             noOfLines={2}
+                            color="dark.500"
                         >
                             {title}
                         </Heading>
                     </a>
                 </NextLink>
-                <Text fontSize="sm" noOfLines={3} color="light.500">{excerpt}</Text>
+                <Text fontSize="sm" noOfLines={3} color="light.700">{excerpt}</Text>
             </Stack>
         </Box >
     );
@@ -93,8 +95,14 @@ export const WideCard = ({ post }) => {
                     pt={8}
                     px={10}
                 >
-                    <Heading noOfLines={2} size="lg"> {title}</Heading>
-                    <Text fontSize="md" color="light.100" noOfLines={2}> {excerpt} </Text>
+                    <Heading
+                        color="dark.500"
+                        noOfLines={2}
+                        size="lg"
+                    >
+                        {title}
+                    </Heading>
+                    <Text fontSize="md" color="light.700" noOfLines={2}> {excerpt} </Text>
                     <Flex justifyContent="space-between" >
                         <Text fontSize="sm" color="light.100">by {createdBy}</Text>
                         <Readmore url={`/post/${slug}`} text="read more" />
@@ -138,8 +146,8 @@ export const Big = ({ post }) => {
                 p={10}
                 spacing={5}
             >
-                <Heading> {title} </Heading>
-                <Text color="light.100" noOfLines={3} > {excerpt} </Text>
+                <Heading color="dark.500"> {title} </Heading>
+                <Text color="light.500" noOfLines={3} > {excerpt} </Text>
             </Stack>
             <Box
                 w="50%"

@@ -2,35 +2,54 @@ import React from "react";
 import {
     Box,
     Flex,
-    Text,
-    Stack,
     Button,
     Icon,
-    Link,
-    Collapse,
-    Popover,
-    PopoverTrigger,
-    IconButton,
-    PopoverContent,
-    useDisclosure,
-    useBreakpointValue,
     Heading,
-    UnorderedList,
-    ListItem,
-    VStack,
-    HStack
+    HStack,
+    Input,
+    InputGroup,
+    InputLeftElement,
+    VStack
 } from "@chakra-ui/react";
 
+import { FaTwitter, } from "@react-icons/all-files/fa/FaTwitter";
+import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
+import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn";
+import { SiInstagram } from "@react-icons/all-files/si/SiInstagram";
+import { IoSearch } from "@react-icons/all-files/io5/IoSearch";
 
 import NextLink from "next/link";
+
+const SearchBox = () => {
+    return (
+        <Flex>
+            {/* <InputGroup>
+                <InputLeftElement
+                    pointerEvents='none'
+                    color='gray.300'
+                    fontSize='1.2em'
+                />
+                <Input placeholder='Enter amount' />
+                <InputLeftElement children={<IoSearch />} />
+            </InputGroup> */}
+            {/* <IoSearch /> */}
+
+        </Flex>
+    );
+};
 
 const Logo = () => {
     return (
         <NextLink href="/">
             <a>
-                <Box>
-                    <Heading>Name</Heading>
-                    <Box p={0.5} bgColor="primary.500" />
+                <Box color="dark.500">
+                    <HStack>
+                        <Heading>mellow</Heading>
+                        <Heading
+                            color="primary.500">
+                            yellow
+                        </Heading>
+                    </HStack>
                 </Box>
             </a>
         </NextLink>
@@ -48,6 +67,7 @@ export default function Navbar() {
             justifyContent="space-between"
         >
             <Logo />
+            <SearchBox />
             <DesktopNav />
         </Flex>
     );
@@ -59,6 +79,7 @@ const DesktopNav = () => {
             spacing={10}
             fontWeight="medium"
             color="dark.100"
+            fontFamily="heading"
         >
             {NAV_ITEMS.map((item, i) => {
                 return (
@@ -68,6 +89,7 @@ const DesktopNav = () => {
                         passHref >
                         <a>
                             <Box
+                                transition="all .1s ease-out"
                                 _hover={{
                                     color: "dark.500"
                                 }}
@@ -78,6 +100,12 @@ const DesktopNav = () => {
                     </NextLink>
                 );
             })}
+            <HStack spacing={5}>
+                <Icon as={FaFacebookF} />
+                <Icon as={FaTwitter} />
+                <Icon as={SiInstagram} />
+                <Icon as={FaLinkedinIn} />
+            </HStack>
         </HStack>
     );
 };
@@ -90,24 +118,24 @@ const NAV_ITEMS = [
         href: "/",
     },
     {
-        label: "All Post",
+        label: "Post",
         href: "/post",
     },
-    {
-        label: "Category",
-        href: "#",
-        children: [
-            {
-                label: "Basic",
-                subLabel: "Trending Design to inspire you",
-                href: "/category/basic",
-            },
-            {
-                label: "Learn",
-                subLabel: "Up-and-coming Designers",
-                href: "/category/learn",
-            },
-        ],
-    },
+    // {
+    //     label: "Category",
+    //     href: "#",
+    //     children: [
+    //         {
+    //             label: "Basic",
+    //             subLabel: "Trending Design to inspire you",
+    //             href: "/category/basic",
+    //         },
+    //         {
+    //             label: "Learn",
+    //             subLabel: "Up-and-coming Designers",
+    //             href: "/category/learn",
+    //         },
+    //     ],
+    // },
 
 ];

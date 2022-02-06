@@ -1,12 +1,19 @@
 import { gql } from "@apollo/client";
 import client from "@/lib/apolloClient";
 import { ThreeColumn } from "@/components/PostLayout";
-import { Box } from "@chakra-ui/react";
+import { HeroPost } from "@/components/Hero";
+import {
+  Box,
+} from "@chakra-ui/react";
+
+const title = "All Post";
+const subtitle = " posts in here";
 
 const AllPost = ({ posts }) => {
+
   return (
     <>
-      All Post
+      <HeroPost title={title} subtitle={subtitle} total={posts.length} />
       <Box>
         <ThreeColumn post={posts} />
       </Box>

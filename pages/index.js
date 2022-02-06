@@ -3,12 +3,12 @@ import { gql } from "@apollo/client";
 import client from "@/lib/apolloClient";
 import { ThreeColumn, SingleWide, SingleBig } from "@/components/PostLayout";
 
-import Hero from "@/components/Hero";
+import HeroIndexPage from "@/components/Hero";
 export default function Home({ sixPosts, singlePost, lastPost }) {
 
   return (
     <>
-      <Hero />
+      <HeroIndexPage />
       <SingleWide post={singlePost} />
       <ThreeColumn post={sixPosts} />
       <SingleBig post={lastPost} />

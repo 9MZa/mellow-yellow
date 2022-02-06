@@ -13,6 +13,7 @@ export const CategoryText = ({ name, slug }) => {
         <NextLink href={`/category/${slug}`}>
             <a>
                 <Text
+                    fontWeight="semibold"
                     _hover={{
                     }}
                 >

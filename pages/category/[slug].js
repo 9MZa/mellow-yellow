@@ -2,13 +2,17 @@ import React from "react";
 import { gql } from "@apollo/client";
 import client from "@/lib/apolloClient";
 import { ThreeColumn } from "@/components/PostLayout";
+import { HeroCategory } from "@/components/Hero";
 
 export default function CategorySlug({ posts }) {
 
+    const { categories: { name: categoryName } } = posts[0];
+
     return (
-        <div>
+        <>
+            <HeroCategory name={categoryName} total={posts.length} />
             <ThreeColumn post={posts} />
-        </div>
+        </>
     );
 }
 

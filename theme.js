@@ -1,5 +1,6 @@
 import { extendTheme } from "@chakra-ui/react";
 import { Button } from "@/components/Button";
+
 const theme = extendTheme({
     colors: {
         primary: {
@@ -26,6 +27,14 @@ const theme = extendTheme({
             800: "#151515",
             900: "#000000"
         },
+        gray: {
+            100: "#F6F3EF",
+            200: "#EFEAE4",
+            500: "#D6D2CC",
+            700: "#8F8C88",
+            800: "#6B6966",
+            900: "#474543"
+        }
     },
     fonts: {
         heading: "Work Sans, sans-serif",
