@@ -56,17 +56,20 @@ const theme = extendTheme({
             h1: {
                 fontSize: "5xl",
                 fontFamily: "heading",
-                fontWeight: "semibold"
+                fontWeight: "semibold",
+                color: "dark.500"
             },
             h2: {
                 fontSize: "4xl",
                 fontFamily: "heading",
-                fontWeight: "semibold"
+                fontWeight: "semibold",
+                color: "dark.500"
             },
             h3: {
                 fontSize: "3xl",
                 fontFamily: "heading",
-                fontWeight: "semibold"
+                fontWeight: "semibold",
+                color: "dark.500"
             },
             p: {
                 // color: props.colorMode === "dark" ? "teal.300" : "teal.500",

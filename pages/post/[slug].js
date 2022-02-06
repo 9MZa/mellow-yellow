@@ -32,7 +32,7 @@ const PostSlug = ({ posts }) => {
                     textAlign="center"
                 >
                     <CategoryBox slug={categorySlug} name={categoryName} />
-                    <Heading size="2xl"> {title} </Heading>
+                    <Heading color="dark.500" size="2xl"> {title} </Heading>
                     <HStack
                         justifyContent="center"
                         spacing={5}
