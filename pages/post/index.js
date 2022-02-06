@@ -21,15 +21,14 @@ const FilterButton = ({ btnName, filter }) => {
             key={i}
             onClick={() => filter(item.name)}
             as="button"
-            border="2px"
-            borderColor="primary.500"
             color="dark.100"
+            bgColor="gray.100"
             w={24}
             h={10}
             fontWeight="semibold"
             transition="all .3s ease-out"
             _hover={{
-              bgColor: "gray.100"
+              bgColor: "primary.200"
             }}
           >
             {item.name}
