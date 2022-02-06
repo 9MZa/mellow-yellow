@@ -41,6 +41,7 @@ export async function getStaticProps({ params }) {
             posts (where: {categories: {slug: $slug}},stage:PUBLISHED) {
                 slug
                 title
+                excerpt
                 publishedAt
                 categories {
                     name
