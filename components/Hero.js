@@ -65,8 +65,7 @@ export const HeroCategory = ({ name, total }) => {
     return (
         <>
             <Stack py={20} bgColor="gray.100" textAlign="center" >
-                <Heading size="2xl" color="dark.500">{name}</Heading>
-                <Text color="light.500">  {total} Posts  </Text>
+                <Heading size="2xl" color="dark.500"> {total} Posts on {name}</Heading>
             </Stack>
         </>
     );

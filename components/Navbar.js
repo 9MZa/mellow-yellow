@@ -2,14 +2,9 @@ import React from "react";
 import {
     Box,
     Flex,
-    Button,
     Icon,
     Heading,
     HStack,
-    Input,
-    InputGroup,
-    InputLeftElement,
-    VStack
 } from "@chakra-ui/react";
 
 import { FaTwitter, } from "@react-icons/all-files/fa/FaTwitter";
@@ -17,26 +12,7 @@ import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
 import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn";
 import { SiInstagram } from "@react-icons/all-files/si/SiInstagram";
 import { IoSearch } from "@react-icons/all-files/io5/IoSearch";
-
 import NextLink from "next/link";
-
-const SearchBox = () => {
-    return (
-        <Flex>
-            {/* <InputGroup>
-                <InputLeftElement
-                    pointerEvents='none'
-                    color='gray.300'
-                    fontSize='1.2em'
-                />
-                <Input placeholder='Enter amount' />
-                <InputLeftElement children={<IoSearch />} />
-            </InputGroup> */}
-            {/* <IoSearch /> */}
-
-        </Flex>
-    );
-};
 
 const Logo = () => {
     return (
@@ -67,7 +43,6 @@ export default function Navbar() {
             justifyContent="space-between"
         >
             <Logo />
-            <SearchBox />
             <DesktopNav />
         </Flex>
     );
@@ -105,6 +80,7 @@ const DesktopNav = () => {
                 <Icon as={FaTwitter} />
                 <Icon as={SiInstagram} />
                 <Icon as={FaLinkedinIn} />
+                <Icon as={IoSearch} />
             </HStack>
         </HStack>
     );
