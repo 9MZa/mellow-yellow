@@ -47,55 +47,69 @@ const theme = extendTheme({
     },
     styles: {
         global: (props) => ({
-            "html, body": {
-                // fontSize: "sm",
-                // color: props.colorMode === "dark" ? "white" : "gray.600",
-                // lineHeight: "tall",
-            },
-
+            "html, body": {},
             h1: {
-                fontSize: "5xl",
+                fontSize: { base: "4xl", md: "6xl" },
                 fontFamily: "heading",
                 fontWeight: "semibold",
                 color: "dark.500"
             },
             h2: {
-                fontSize: "4xl",
+                fontSize: { base: "3xl", md: "5xl" },
                 fontFamily: "heading",
                 fontWeight: "semibold",
                 color: "dark.500"
             },
             h3: {
-                fontSize: "3xl",
+                fontSize: { base: "2xl", md: "4xl" },
+                fontFamily: "heading",
+                fontWeight: "semibold",
+                color: "dark.500"
+            },
+            h4: {
+                fontSize: { base: "xl", md: "3xl" },
+                fontFamily: "heading",
+                fontWeight: "semibold",
+                color: "dark.500"
+            },
+            h5: {
+                fontSize: { base: "lg", md: "2xl" },
+                fontFamily: "heading",
+                fontWeight: "semibold",
+                color: "dark.500"
+            },
+            h6: {
+                fontSize: { base: "md", md: "xl" },
                 fontFamily: "heading",
                 fontWeight: "semibold",
                 color: "dark.500"
             },
             p: {
-                // color: props.colorMode === "dark" ? "teal.300" : "teal.500",
+                my: 4
             },
             pre: {
-                my: "5",
-                p: "5",
+                my: 5,
+                p: 5,
                 bgColor: "gray.100",
                 overflow: "scroll"
             },
             ul: {
-                py: "5",
-                px: "10"
-
+                py: 2,
+                px: 10,
             },
             ol: {
-                py: "5",
-                px: "10"
-
+                py: 2,
+                px: 10,
+            },
+            li: {
+                my: { base: 1, md: 2 },
             },
             blockquote: {
-                my: "5",
-                p: "5",
+                my: 5,
+                p: 5,
                 color: "dark.200",
                 fontFamily: "blockquote",
-                fontSize: "3xl",
+                fontSize: { base: "xl", md: "3xl" },
                 fontStyle: "italic",
                 bgColor: "primary.100",
                 borderColor: "primary.500",

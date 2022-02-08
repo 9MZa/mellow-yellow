@@ -47,43 +47,11 @@ const PostSlug = ({ posts }) => {
                     maxW="container.md"
                     mx="auto"
                 >
-                    {/* <Stack
-                        spacing={14}
-                        my={10}
-                        textAlign="center"
-                    >
-                        <CategoryBox slug={categorySlug} name={categoryName} />
-                        <Heading color="dark.500" size="2xl"> {title} </Heading>
-                        <HStack
-                            justifyContent="center"
-                            spacing={5}
-                            color="dark.100"
-                            textTransform="capitalize"
-                        >
-                            <HStack>
-                                <Text color="light.500" >By</Text>
-                                <Text
-                                    color="dark.200"
-                                    fontWeight="semibold"
-                                >
-                                    {createdName}
-                                </Text>
-                            </HStack>
-                            <HStack color="light.500" spacing={5}>
-                                <Text>•</Text>
-                                <Text><DateFormat date={publishedAt} /></Text>
-                                <Text>•</Text>
-                            </HStack>
-                            <Text color="light.500"><CalcReadingTime data={text} /></Text>
-                        </HStack>
-                    </Stack> */}
-
                     <Flex
                         justifyContent="center"
                         flexDirection="column"
                         textAlign="center"
                     >
-
                         <CategoryBox slug={categorySlug} name={categoryName} />
                         <Heading
                             mt={{ base: 6, md: 6, lg: 10 }}
@@ -91,7 +59,6 @@ const PostSlug = ({ posts }) => {
                             fontSize={{ base: "2xl", md: "4xl", lg: "5xl" }}
                         > {title}
                         </Heading>
-
                     </Flex>
                     <Stack
                         mt={5}
@@ -115,9 +82,7 @@ const PostSlug = ({ posts }) => {
                             <Text color="light.500"><CalcReadingTime data={text} /></Text>
                         </HStack>
                     </Stack>
-
                     <Divider my={10} />
-
                 </Box>
 
                 <Box
@@ -140,9 +105,7 @@ const PostSlug = ({ posts }) => {
                 >
                     <div dangerouslySetInnerHTML={{ __html: body }} />
                 </Box>
-
             </Box>
-
         </>
     );
 };
