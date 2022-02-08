@@ -6,15 +6,15 @@ import { HeroPost } from "@/components/Hero";
 import { NextSeo } from "next-seo";
 import {
   Box,
+  Flex,
   HStack
 } from "@chakra-ui/react";
 
 const FilterButton = ({ btnName, filter }) => {
   return (
-    <HStack
+    <Flex
       justifyContent="center"
-      direction="column"
-      spacing={4}
+      flexWrap="wrap"
       my={10}
     >
       {btnName.map((item, i) => {
@@ -25,8 +25,10 @@ const FilterButton = ({ btnName, filter }) => {
             as="button"
             color="dark.100"
             bgColor="gray.100"
-            w={24}
+            w={28}
             h={10}
+            mx={2}
+            my={2}
             fontWeight="semibold"
             transition="all .3s ease-out"
             _hover={{
@@ -37,7 +39,7 @@ const FilterButton = ({ btnName, filter }) => {
           </Box>
         );
       })}
-    </HStack>
+    </Flex>
   );
 };
 
