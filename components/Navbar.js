@@ -2,11 +2,9 @@ import React from "react";
 import {
     Box,
     Flex,
-    Icon,
     Text,
     Heading,
     HStack,
-    Stack,
     Link,
     Collapse,
     VStack,
@@ -19,9 +17,6 @@ import {
     HamburgerIcon,
 } from "@chakra-ui/icons";
 
-import { FaTwitter, } from "@react-icons/all-files/fa/FaTwitter";
-import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
-import { SiInstagram } from "@react-icons/all-files/si/SiInstagram";
 import NextLink from "next/link";
 
 const Logo = () => {
@@ -42,7 +37,10 @@ const Logo = () => {
     );
 };
 
-export default function WithSubnavigation() {
+const linkColor = "dark.200";
+const linkHoverColor = "primary.500";
+
+export default function Navigation() {
     const { isOpen, onToggle } = useDisclosure();
 
     return (
@@ -88,7 +86,7 @@ const DesktopNav = () => {
         <HStack
             spacing={10}
             fontWeight="medium"
-            color="dark.100"
+            color={linkColor}
             fontFamily="heading"
         >
             {NAV_ITEMS.map((item, i) => {
@@ -99,9 +97,9 @@ const DesktopNav = () => {
                         passHref >
                         <a>
                             <Box
-                                transition="all .1s ease-out"
+                                transition="all .2s ease-out"
                                 _hover={{
-                                    color: "dark.500"
+                                    color: linkHoverColor
                                 }}
                             >
                                 {item.label}
@@ -111,17 +109,26 @@ const DesktopNav = () => {
                 );
             })}
             <HStack spacing={5}>
-                <Link>
-                    <Icon as={FaFacebookF} />
-                </Link>
-                <Link>
-                    <Icon as={FaTwitter} />
-                </Link>
-                <Link>
-                    <Icon as={SiInstagram} />
-                </Link>
+                {SocialMediaItems.map((item, i) => {
+                    return (
+                        <NextLink key={i} href={item.href} passHref>
+                            <a>
+                                <Box
+                                    mb={-1}
+                                    transition="all .2s ease-out"
+                                    fontSize="xl"
+                                    _hover={{
+                                        color: linkHoverColor
+                                    }}
+                                >
+                                    <ion-icon name={item.icon} />
+                                </Box>
+                            </a>
+                        </NextLink>
+                    );
+                })}
             </HStack>
-        </HStack>
+        </HStack >
     );
 };
 
@@ -131,20 +138,32 @@ const MobileNav = () => {
             bgColor="white"
             mt={5}
             pb={7}
-            display={{ md: "none" }}>
+            display={{ md: "none" }}
+            color={linkColor}
+        >
             {NAV_ITEMS.map((navItem) => (
                 <MobileNavItem key={navItem.label} {...navItem} />
             ))}
-            <VStack spacing={4}  >
-                <Link>
-                    <Icon as={FaFacebookF} />
-                </Link>
-                <Link>
-                    <Icon as={FaTwitter} />
-                </Link>
-                <Link>
-                    <Icon as={SiInstagram} />
-                </Link>
+            <VStack spacing={6}
+            >
+                {SocialMediaItems.map((item, i) => {
+                    return (
+                        <NextLink key={i} href={item.href} passHref>
+                            <a>
+                                <Box
+                                    mb={-1}
+                                    fontSize="xl"
+                                    transition="all .2s ease-out"
+                                    _hover={{
+                                        color: linkHoverColor
+                                    }}
+                                >
+                                    <ion-icon name={item.icon}></ion-icon>
+                                </Box>
+                            </a>
+                        </NextLink>
+                    );
+                })}
             </VStack>
         </Flex>
     );
@@ -155,6 +174,7 @@ const MobileNavItem = ({ label, href }) => {
     return (
         <Flex
             mt={-5}
+            mb={3}
             direction="column"
             as={Link}
             href={href ?? "#"}
@@ -162,10 +182,10 @@ const MobileNavItem = ({ label, href }) => {
             alignItems="center"
             _hover={{
                 textDecoration: "none",
+                color: linkHoverColor
             }}>
             <Text
                 fontWeight={600}
-                color="gray.600"
             >
                 {label}
             </Text>
@@ -182,5 +202,22 @@ const NAV_ITEMS = [
         label: "Post",
         href: "/post",
     },
+];
 
+const SocialMediaItems = [
+    {
+        name: "Facebook",
+        icon: "logo-facebook",
+        href: "/#"
+    },
+    {
+        name: "Twitter",
+        icon: "logo-twitter",
+        href: "/#"
+    },
+    {
+        name: "Instagram",
+        icon: "logo-instagram",
+        href: "/#"
+    }
 ];

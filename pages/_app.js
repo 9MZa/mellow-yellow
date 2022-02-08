@@ -5,7 +5,7 @@ import Layout from "@/components/Layout";
 import theme from "../theme";
 import { DefaultSeo } from "next-seo";
 import SEO from "../next-seo.config";
-
+import Script from "next/script";
 const GlobalStyles = css`
   /*
     This will hide the focus indicator if the element receives focus    via the mouse,
@@ -25,6 +25,8 @@ function MyApp({ Component, pageProps }) {
         <DefaultSeo {...SEO} />
         <Global styles={GlobalStyles} />
         <Component {...pageProps} />
+        <Script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" />
+        <Script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" />
       </Layout>
     </ChakraProvider>
   );

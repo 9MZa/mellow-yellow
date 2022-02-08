@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {
     Box,
-    Flex,
-    IconButton,
 } from "@chakra-ui/react";
-import { HiChevronUp } from "@react-icons/all-files/hi/HiChevronUp";
 import { IoChevronUpOutline } from "@react-icons/all-files/io5/IoChevronUpOutline";
 
 export default function ScrollToTop() {
@@ -44,12 +41,12 @@ export default function ScrollToTop() {
             {isVisible && (
                 <Box
                     as="button"
-                    bgColor="primary.200"
+                    bgColor="primary.500"
                     p={3}
                     fontSize="xl"
                     transition="all .3s ease-out"
                     _hover={{
-                        bgColor: "primary.500"
+                        bgColor: "primary.200"
                     }}
                     onClick={scrollToTop}
                 >
