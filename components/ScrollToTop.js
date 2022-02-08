@@ -38,7 +38,8 @@ export default function ScrollToTop() {
                 <Box
                     as="button"
                     bgColor="primary.500"
-                    p={3}
+                    h={10}
+                    w={10}
                     fontSize="xl"
                     transition="all .3s ease-out"
                     _hover={{
@@ -46,7 +47,9 @@ export default function ScrollToTop() {
                     }}
                     onClick={scrollToTop}
                 >
-                    <ion-icon name="chevron-up-outline"></ion-icon>
+                    <Box mt={1}>
+                        <ion-icon name="chevron-up-outline"></ion-icon>
+                    </Box>
                 </Box>
             )}
         </Box>
