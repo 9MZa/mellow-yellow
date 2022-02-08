@@ -9,7 +9,6 @@ import {
 } from "@chakra-ui/react";
 import { FaTwitter, } from "@react-icons/all-files/fa/FaTwitter";
 import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
-import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn";
 import { SiInstagram } from "@react-icons/all-files/si/SiInstagram";
 
 const Footer = () => {
@@ -17,9 +16,9 @@ const Footer = () => {
         <Box
             as="footer"
             borderTopWidth={1}
-            py={4}
-            px={{ base: 0, md: 10, lg: 0 }}
+            px={{ base: 0, md: 5, lg: 0 }}
             color="dark.200"
+            py={{ base: 5, md: 0 }}
         >
             <Box
                 maxW="container.lg"
@@ -33,36 +32,48 @@ const Footer = () => {
                     flexDirection={{ base: "column-reverse", md: "row" }}
                     alignItems={{ base: "center" }}
                 >
-                    <HStack>
-                        <Box color="dark.500" textAlign={{ base: "center", md: "left" }} >
-                            <HStack alignItems="baseline">
-                                <Heading size="lg">mellow</Heading>
-                                <Heading
-                                    color="primary.500"
-                                    size="lg"
-                                >
-                                    yellow
-                                </Heading>
-                            </HStack>
-                            <Text
-                                color="dark.100"
-                                fontWeight="normal"
-                                fontSize={{ base: "xs", md: "sm" }}
-                            >
-                                &copy;&nbsp;2022&nbsp;All Rights Reserved
-                            </Text>
-                        </Box>
-                    </HStack>
+                    <Flex
+                        color="dark.500"
+                        flexDirection="column"
+                        textAlign={{ base: "center", md: "left" }}
+                        py={{ base: 5, md: 0 }}
+                        pt={{ base: 0, md: 3 }}
+                    >
 
-                    <HStack
+                        <HStack
+                            alignItems="baseline"
+                            mt={{ base: 5, md: 0 }}
+                        >
+                            <Heading size="lg">mellow</Heading>
+                            <Heading
+                                color="primary.500"
+                                size="lg"
+                            >
+                                yellow
+                            </Heading>
+                        </HStack>
+                        <Text
+                            color="dark.100"
+                            fontWeight="normal"
+                            fontSize={{ base: "xs", md: "sm" }}
+                            mt={0}
+                        >
+                            &copy;&nbsp;2022&nbsp;All Rights Reserved
+                        </Text>
+                    </Flex>
+
+                    <Flex
                         fontWeight="normal"
                         color="dark.100"
                         fontSize="sm"
-                        my={5}
+                        justifyContent="center"
+                        textAlign="center"
                         flexDirection={{ base: "column", md: "row" }}
                     >
                         <Text>Follow us:</Text>
-                        <HStack spacing={0}>
+                        <HStack
+                            spacing={0}
+                        >
                             <Link href="">
                                 <Box
                                     as="button"
@@ -103,7 +114,7 @@ const Footer = () => {
                                 </Box>
                             </Link>
                         </HStack>
-                    </HStack>
+                    </Flex>
                 </Flex>
             </Box>
         </Box>

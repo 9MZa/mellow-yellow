@@ -40,7 +40,6 @@ const HeroIndexPage = () => {
                     <Flex
                         justifyContent="end"
                         w={{ base: "100%", md: "50%" }}
-                        mt={{ base: -14, md: 0 }}
                         zIndex={0}
                     >
                         <Box

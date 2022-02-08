@@ -57,7 +57,7 @@ export const CommonCard = ({ post }) => {
                         <CalcReadingTime data={text} />
                     </Text>
                 </Flex>
-                <NextLink href={`/post/${slug}`}>
+                <NextLink href={`/post/${slug}`} passHref>
                     <a>
                         <Heading
                             as="h2"
@@ -110,6 +110,7 @@ export const WideCard = ({ post }) => {
                     alignItems="center"
                     w={{ base: "100%", md: "50%", lg: "55%" }}
                     px={{ base: 3, md: 5, lg: 10 }}
+                    pt={{ base: 0, md: 8 }}
                 >
                     <Box>
                         <Flex
@@ -124,13 +125,17 @@ export const WideCard = ({ post }) => {
                                 <CalcReadingTime data={text} />
                             </Text>
                         </Flex>
-                        <Heading
-                            color="dark.500"
-                            noOfLines={2}
-                            size="lg"
-                        >
-                            {title}
-                        </Heading>
+                        <NextLink href={`/post/${slug}`} passHref>
+                            <a>
+                                <Heading
+                                    color="dark.500"
+                                    noOfLines={2}
+                                    size="lg"
+                                >
+                                    {title}
+                                </Heading>
+                            </a>
+                        </NextLink>
                         <Text
                             fontSize="md"
                             my={{ base: 2, md: 2, lg: 4 }}
@@ -205,13 +210,17 @@ export const Big = ({ post }) => {
                         <CalcReadingTime data={text} />
                     </Text>
                 </Flex>
-                <Heading
-                    color="dark.500"
-                    noOfLines={2}
-                    fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
-                >
-                    {title}
-                </Heading>
+                <NextLink href={`/post/${slug}`} passHref >
+                    <a>
+                        <Heading
+                            color="dark.500"
+                            noOfLines={2}
+                            fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
+                        >
+                            {title}
+                        </Heading>
+                    </a>
+                </NextLink>
                 <Text
                     color={{ base: "light.700", md: "light.500" }}
                     noOfLines={3}

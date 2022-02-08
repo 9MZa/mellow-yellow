@@ -50,8 +50,7 @@ export default function WithSubnavigation() {
             <Flex
                 bg="white"
                 maxW="container.lg"
-                pt={2}
-                pb={5}
+                py={{ base: 2, md: 3 }}
                 px={{ base: 3, md: 3, lg: 0 }}
                 mx="auto"
                 justifyContent="space-between"
@@ -75,7 +74,6 @@ export default function WithSubnavigation() {
                         aria-label={"Toggle Navigation"}
                     />
                 </Flex>
-
             </Flex>
 
             <Collapse in={isOpen} animateOpacity>
@@ -131,12 +129,13 @@ const MobileNav = () => {
     return (
         <Flex
             bgColor="white"
-            py={10}
+            mt={5}
+            pb={7}
             display={{ md: "none" }}>
             {NAV_ITEMS.map((navItem) => (
                 <MobileNavItem key={navItem.label} {...navItem} />
             ))}
-            <VStack spacing={7} mt={6}>
+            <VStack spacing={4}  >
                 <Link>
                     <Icon as={FaFacebookF} />
                 </Link>
@@ -155,7 +154,7 @@ const MobileNavItem = ({ label, href }) => {
 
     return (
         <Flex
-            my={5}
+            mt={-5}
             direction="column"
             as={Link}
             href={href ?? "#"}
