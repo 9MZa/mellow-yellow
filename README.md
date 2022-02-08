@@ -17,18 +17,18 @@ Thanks for purchasing this project. If you have
 
 ### Post
 
-- Title
-- Excerpt
-- Slug
-- Thumbnail
-- Content
-- Categories
+- **Title:** String, Single line, text, Required, Title
+- **Excerpt:** String, Single line, text, Required
+- **Slug:** String, Slug, Required, Unique
+- **Thumbnail:** Asset, Two-way reference, Required
+- **Content:** RichText, Rich text, Required
+- **Categories:** Category, One-way reference
 
 ### Category
 
-- Name
-- Slug
-- Description
+- **Name:** String, Single line text, Required, Title
+- **Slug:** String, Slug, Required, Unique
+- **Description:** String, Single line text, Required
 
 ## Install package
 
