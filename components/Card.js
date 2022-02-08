@@ -45,15 +45,16 @@ export const CommonCard = ({ post }) => {
                     placeholder="blur"
                 />
             </Box>
-            <Stack p={3}>
+            <Box p={3}>
                 <Flex
-                    gap={2}
-                    fontSize="xs"
+                    fontSize={{ base: "xs" }}
                     justifyContent="space-between"
                     color="dark.100"
+                    mt={-3}
+                    mb={-1}
                 >
                     <CategoryText name={categoryName} slug={categorySlug} />
-                    <Text >
+                    <Text>
                         <CalcReadingTime data={text} />
                     </Text>
                 </Flex>
@@ -75,14 +76,14 @@ export const CommonCard = ({ post }) => {
                 <Flex
                     justifyContent="space-between"
                     display={{ base: "flex", md: "flex" }}
-                    pt={3}
-                    pb={{ base: 2, md: 0, lg: 0 }}
                     fontSize={{ base: "xs", md: "xs" }}
+                    mt={-4}
+                    mb={-3}
                 >
                     <Text color="light.100">by {createdBy}</Text>
                     <Readmore url={`/post/${slug}`} text="read more" />
                 </Flex>
-            </Stack>
+            </Box>
         </Box >
     );
 };
@@ -118,6 +119,8 @@ export const WideCard = ({ post }) => {
                             my={4}
                             justifyContent="space-between"
                             color="dark.100"
+                            mt={1}
+                            mb={-1}
                             display={{ base: "flex", md: "none" }}
                         >
                             <CategoryText name={categoryName} slug={categorySlug} />
@@ -137,7 +140,7 @@ export const WideCard = ({ post }) => {
                             </a>
                         </NextLink>
                         <Text
-                            fontSize="md"
+                            fontSize={{ base: "sm", md: "md" }}
                             my={{ base: 2, md: 2, lg: 4 }}
                             color="light.700"
                             noOfLines={{ base: 3, md: 3, lg: 2 }}
@@ -146,8 +149,6 @@ export const WideCard = ({ post }) => {
                         </Text>
                         <Flex
                             justifyContent="space-between"
-                            pt={4}
-                            pb={4}
                             fontSize={{ base: "xs", md: "sm" }}
                         >
                             <Text color="light.100">by {createdBy}</Text>
@@ -200,13 +201,12 @@ export const Big = ({ post }) => {
 
             >
                 <Flex
-                    fontSize="sm"
+                    fontSize={{ base: "xs", md: "sm" }}
                     justifyContent="space-between"
                     color="dark.100"
-                    mt={{ base: 3, md: 0 }}
                 >
                     <CategoryText name={categoryName} slug={categorySlug} />
-                    <Text fontSize="xs">
+                    <Text  >
                         <CalcReadingTime data={text} />
                     </Text>
                 </Flex>
@@ -215,6 +215,7 @@ export const Big = ({ post }) => {
                         <Heading
                             color="dark.500"
                             noOfLines={2}
+                            mt={-3}
                             fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
                         >
                             {title}
@@ -224,13 +225,13 @@ export const Big = ({ post }) => {
                 <Text
                     color={{ base: "light.700", md: "light.500" }}
                     noOfLines={3}
+                    fontSize={{ base: "xs", md: "md" }}
                 >
                     {excerpt}
                 </Text>
                 <Flex
                     justifyContent="space-between"
-                    pb={{ base: 6, md: 0 }}
-                    fontSize="sm"
+                    fontSize={{ base: "xs", md: "sm" }}
                 >
                     <Text color="light.100" >by {createdBy}</Text>
                     <Readmore url={`/post/${slug}`} text="read more" />
