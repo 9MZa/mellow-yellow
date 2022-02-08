@@ -7,7 +7,7 @@ import DateFormat from "@/components/Date";
 import { CategoryBox } from "@/components/CategoryTag";
 import CalcReadingTime from "@/lib/minuteRead";
 import { NextSeo } from "next-seo";
-
+import ScrollToTop from "@/components/ScrollToTop";
 const PostSlug = ({ posts }) => {
 
     const { title, publishedAt, excerpt, slug,
@@ -36,17 +36,18 @@ const PostSlug = ({ posts }) => {
                     ],
                 }}
             />
+            <ScrollToTop />
             <Box
                 maxW="container.lg"
                 mt={10}
-                mb={20}
+                px={{ base: 5, md: 5, lg: 0 }}
                 mx="auto"
             >
                 <Box
                     maxW="container.md"
                     mx="auto"
                 >
-                    <Stack
+                    {/* <Stack
                         spacing={14}
                         my={10}
                         textAlign="center"
@@ -73,17 +74,55 @@ const PostSlug = ({ posts }) => {
                                 <Text><DateFormat date={publishedAt} /></Text>
                                 <Text>•</Text>
                             </HStack>
+                            <Text color="light.500"><CalcReadingTime data={text} /></Text>
+                        </HStack>
+                    </Stack> */}
 
+                    <Flex
+                        justifyContent="center"
+                        flexDirection="column"
+                        textAlign="center"
+                    >
 
+                        <CategoryBox slug={categorySlug} name={categoryName} />
+                        <Heading
+                            mt={{ base: 6, md: 6, lg: 10 }}
+                            color="dark.500"
+                            fontSize={{ base: "2xl", md: "4xl", lg: "5xl" }}
+                        > {title}
+                        </Heading>
+
+                    </Flex>
+                    <Stack
+                        mt={5}
+                        justifyContent="center"
+                        direction={{ base: "column", md: "row" }}
+                        alignItems="center"
+                    >
+                        <HStack fontSize={{ base: "xs", md: "sm" }}>
+                            <Text color="light.500" >By</Text>
+                            <Text
+                                color="dark.200"
+                                fontWeight="semibold"
+                            >
+                                {createdName}
+                            </Text>
+                        </HStack>
+                        <HStack fontSize={{ base: "xs", md: "sm" }}>
+                            <Text display={{ base: "none", md: "flex" }} >•</Text>
+                            <Text><DateFormat date={publishedAt} /></Text>
+                            <Text>•</Text>
                             <Text color="light.500"><CalcReadingTime data={text} /></Text>
                         </HStack>
                     </Stack>
+
                     <Divider my={10} />
+
                 </Box>
 
                 <Box
                     position="relative"
-                    h="400px"
+                    h={{ base: "200px", md: "350px", lg: "400px" }}
                     w="100%"
                 >
                     <NextImage
@@ -93,6 +132,7 @@ const PostSlug = ({ posts }) => {
                         objectFit="cover"
                     />
                 </Box>
+
                 <Box
                     maxW="container.md"
                     mx="auto"
@@ -100,7 +140,9 @@ const PostSlug = ({ posts }) => {
                 >
                     <div dangerouslySetInnerHTML={{ __html: body }} />
                 </Box>
+
             </Box>
+
         </>
     );
 };
