@@ -30,6 +30,17 @@ Thanks for purchasing this project. If you have
 - **Slug:** String, Slug, Required, Unique
 - **Description:** String, Single line text, Required
 
+## Environment Variables
+
+### API Access on GraphCMS
+
+`Project Setting -> API Access -> Content API` Copy your Content API
+
+Open project and create `.env.local` file in root project
+`GRAHPCMS_TOKEN={YOUR_APIKEYS}`
+
+> Make sure you already create permission.
+
 ## Install package
 
 1. First go-to in project folder
@@ -47,8 +58,8 @@ Thanks for purchasing this project. If you have
 
 ## Source and Credit
 
-- Nextjs
-- Chakra-UI
-- Unsplash
-- Undraw
-- IonicIcon
+- [Nextjs](https://nextjs.org/)
+- [Chakra-UI](https://chakra-ui.com/)
+- [Unsplash](https://unsplash.com/)
+- [unDraw](https://undraw.co/)
+- [IonicIcon](https://ionic.io/ionicons)
