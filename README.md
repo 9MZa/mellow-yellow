@@ -15,6 +15,21 @@ Thanks for purchasing this project. If you have
 
 ## GraphCMS Schema
 
+### Post
+
+- Title
+- Excerpt
+- Slug
+- Thumbnail
+- Content
+- Categories
+
+### Category
+
+- Name
+- Slug
+- Description
+
 ## Install package
 
 1. First go-to in project folder
