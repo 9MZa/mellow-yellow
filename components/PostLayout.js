@@ -10,7 +10,12 @@ import { CommonCard, WideCard, Big } from "@/components/Card";
 export const ThreeColumn = ({ post }) => {
 
     return (
-        <Box maxW="container.lg" mx="auto" my={10}>
+        <Box
+            maxW="container.lg"
+            mx="auto"
+            my={10}
+            px={{ base: 4, md: 4, lg: 0 }}
+        >
             <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} rowGap={10} columnGap={10} >
                 {post.map((item, i) => {
                     return (
@@ -31,6 +36,7 @@ export const SingleWide = ({ post }) => {
             mb={10}
             maxW="container.lg"
             mx="auto"
+            px={{ base: 4, md: 4, lg: 0 }}
         >
             <WideCard post={post} />
         </Box>
@@ -40,7 +46,7 @@ export const SingleWide = ({ post }) => {
 export const SingleBig = ({ post }) => {
     return (
         <Box
-            my={10}
+            px={{ base: 4, md: 4, lg: 0 }}
             maxW="container.lg"
             mx="auto"
         >

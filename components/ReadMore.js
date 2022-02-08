@@ -40,7 +40,6 @@ export const Readmore = ({ url, text }) => {
                         textTransform="capitalize"
                         transition="all .2s ease-out"
                         color="light.100"
-                        fontSize="sm"
                         fontWeight="semibold"
                         _groupHover={{
                             color: "dark.200",

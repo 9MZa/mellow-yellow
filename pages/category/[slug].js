@@ -54,9 +54,13 @@ export async function getStaticProps({ params }) {
                 publishedAt
                 categories {
                     name
+                    slug
                 }
                 content{
                     text
+                }
+                createdBy{
+                    name
                 }
                 thumbnail {
                     url

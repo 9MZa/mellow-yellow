@@ -5,7 +5,9 @@ import {
     Heading,
     Text,
     Grid,
-    GridItem
+    GridItem,
+    HStack,
+    VStack
 } from "@chakra-ui/react";
 import NextImage from "next/image";
 import NextLink from "next/link";
@@ -16,8 +18,7 @@ import { CategoryText } from "@/components/CategoryTag";
 export const CommonCard = ({ post }) => {
     const {
         title,
-        excerpt,
-        publishedAt,
+        excerpt, createdBy: { name: createdBy },
         content: { text },
         slug,
         thumbnail: { url: thumbnail },
@@ -71,6 +72,16 @@ export const CommonCard = ({ post }) => {
                     </a>
                 </NextLink>
                 <Text fontSize="sm" noOfLines={3} color="light.700">{excerpt}</Text>
+                <Flex
+                    justifyContent="space-between"
+                    display={{ base: "flex", md: "flex" }}
+                    pt={3}
+                    pb={{ base: 2, md: 0, lg: 0 }}
+                    fontSize={{ base: "xs", md: "xs" }}
+                >
+                    <Text color="light.100">by {createdBy}</Text>
+                    <Readmore url={`/post/${slug}`} text="read more" />
+                </Flex>
             </Stack>
         </Box >
     );
@@ -81,6 +92,7 @@ export const CommonCard = ({ post }) => {
 export const WideCard = ({ post }) => {
 
     const { title, excerpt, slug,
+        content: { text },
         thumbnail: { url: thumbnail },
         categories: { name: categoryName, slug: categorySlug },
         createdBy: { name: createdBy }
@@ -94,29 +106,54 @@ export const WideCard = ({ post }) => {
                     md: "row"
                 }}
             >
-                <Stack
-                    w="100%"
-                    spacing={5}
-                    pt={8}
-                    px={10}
+                <Flex
+                    alignItems="center"
+                    w={{ base: "100%", md: "50%", lg: "55%" }}
+                    px={{ base: 3, md: 5, lg: 10 }}
                 >
-                    <Heading
-                        color="dark.500"
-                        noOfLines={2}
-                        size="lg"
-                    >
-                        {title}
-                    </Heading>
-                    <Text fontSize="md" color="light.700" noOfLines={2}> {excerpt} </Text>
-                    <Flex justifyContent="space-between" >
-                        <Text fontSize="sm" color="light.100">by {createdBy}</Text>
-                        <Readmore url={`/post/${slug}`} text="read more" />
-                    </Flex>
-                </Stack>
+                    <Box>
+                        <Flex
+                            fontSize={{ base: "xs", md: "sm" }}
+                            my={4}
+                            justifyContent="space-between"
+                            color="dark.100"
+                            display={{ base: "flex", md: "none" }}
+                        >
+                            <CategoryText name={categoryName} slug={categorySlug} />
+                            <Text >
+                                <CalcReadingTime data={text} />
+                            </Text>
+                        </Flex>
+                        <Heading
+                            color="dark.500"
+                            noOfLines={2}
+                            size="lg"
+                        >
+                            {title}
+                        </Heading>
+                        <Text
+                            fontSize="md"
+                            my={{ base: 2, md: 2, lg: 4 }}
+                            color="light.700"
+                            noOfLines={{ base: 3, md: 3, lg: 2 }}
+                        >
+                            {excerpt}
+                        </Text>
+                        <Flex
+                            justifyContent="space-between"
+                            pt={4}
+                            pb={4}
+                            fontSize={{ base: "xs", md: "sm" }}
+                        >
+                            <Text color="light.100">by {createdBy}</Text>
+                            <Readmore url={`/post/${slug}`} text="read more" />
+                        </Flex>
+                    </Box>
+                </Flex>
 
                 <Box
-                    h="250px"
-                    w="100%"
+                    h={{ base: "200px", md: "250px", lg: "250px" }}
+                    w={{ base: "100%", md: "50%", lg: "45%" }}
                     position="relative"
                 >
                     <NextImage
@@ -136,7 +173,8 @@ export const WideCard = ({ post }) => {
 
 export const Big = ({ post }) => {
 
-    const { title, excerpt,
+    const { title, excerpt, slug,
+        content: { text },
         thumbnail: { url: thumbnail },
         categories: { name: categoryName, slug: categorySlug },
         createdBy: { name: createdBy }
@@ -145,24 +183,59 @@ export const Big = ({ post }) => {
     return (
         <Flex
             alignItems="center"
-            bgColor="gray.50"
+            bgColor={{ base: "white", md: "gray.50" }}
             flexDirection={{ base: "column-reverse", md: "row" }}
+            boxShadow={{ base: "xs", md: "none" }}
         >
+
             <Stack
                 w={{ base: "100%", md: "50%" }}
-                p={{ base: 2, md: 10 }}
-                spacing={5}
+                px={{ base: 4, md: 5, lg: 8 }}
+                spacing={{ base: 2, md: 5 }}
+
             >
-                <Heading color="dark.500"> {title} </Heading>
-                <Text color="light.500" noOfLines={3} > {excerpt} </Text>
+                <Flex
+                    fontSize="sm"
+                    justifyContent="space-between"
+                    color="dark.100"
+                    mt={{ base: 3, md: 0 }}
+                >
+                    <CategoryText name={categoryName} slug={categorySlug} />
+                    <Text fontSize="xs">
+                        <CalcReadingTime data={text} />
+                    </Text>
+                </Flex>
+                <Heading
+                    color="dark.500"
+                    noOfLines={2}
+                    fontSize={{ base: "xl", md: "2xl", lg: "4xl" }}
+                >
+                    {title}
+                </Heading>
+                <Text
+                    color={{ base: "light.700", md: "light.500" }}
+                    noOfLines={3}
+                >
+                    {excerpt}
+                </Text>
+                <Flex
+                    justifyContent="space-between"
+                    pb={{ base: 6, md: 0 }}
+                    fontSize="sm"
+                >
+                    <Text color="light.100" >by {createdBy}</Text>
+                    <Readmore url={`/post/${slug}`} text="read more" />
+                </Flex>
             </Stack>
+
+
             <Box
                 w={{ base: "100%", md: "50%" }}
             >
                 <Box
                     position="relative"
                     w="full"
-                    h="400px"
+                    h={{ base: "200px", md: "350px", lg: "400px" }}
                 >
                     <NextImage
                         src={thumbnail}

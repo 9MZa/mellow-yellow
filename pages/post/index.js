@@ -13,6 +13,7 @@ const FilterButton = ({ btnName, filter }) => {
   return (
     <HStack
       justifyContent="center"
+      direction="column"
       spacing={4}
       my={10}
     >
@@ -106,6 +107,9 @@ export async function getStaticProps() {
             }
             categories {
               slug
+              name
+            }
+            createdBy{
               name
             }
           }

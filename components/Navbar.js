@@ -9,6 +9,7 @@ import {
     Stack,
     Link,
     Collapse,
+    VStack,
     useDisclosure,
     IconButton,
 } from "@chakra-ui/react";
@@ -51,6 +52,7 @@ export default function WithSubnavigation() {
                 maxW="container.lg"
                 pt={2}
                 pb={5}
+                px={{ base: 3, md: 3, lg: 0 }}
                 mx="auto"
                 justifyContent="space-between"
             >
@@ -59,7 +61,11 @@ export default function WithSubnavigation() {
                     <DesktopNav />
                 </Flex>
 
-                <Flex display={{ base: "block", md: "none" }} >
+                <Flex
+                    zIndex={20}
+                    display={{ base: "block", md: "none" }}
+                    mr={-2}
+                >
                     <IconButton
                         onClick={onToggle}
                         icon={
@@ -107,9 +113,15 @@ const DesktopNav = () => {
                 );
             })}
             <HStack spacing={5}>
-                <Icon as={FaFacebookF} />
-                <Icon as={FaTwitter} />
-                <Icon as={SiInstagram} />
+                <Link>
+                    <Icon as={FaFacebookF} />
+                </Link>
+                <Link>
+                    <Icon as={FaTwitter} />
+                </Link>
+                <Link>
+                    <Icon as={SiInstagram} />
+                </Link>
             </HStack>
         </HStack>
     );
@@ -117,65 +129,48 @@ const DesktopNav = () => {
 
 const MobileNav = () => {
     return (
-        <Stack
-            bg="white"
-            p={4}
+        <Flex
+            bgColor="white"
+            py={10}
             display={{ md: "none" }}>
             {NAV_ITEMS.map((navItem) => (
                 <MobileNavItem key={navItem.label} {...navItem} />
             ))}
-        </Stack>
+            <VStack spacing={7} mt={6}>
+                <Link>
+                    <Icon as={FaFacebookF} />
+                </Link>
+                <Link>
+                    <Icon as={FaTwitter} />
+                </Link>
+                <Link>
+                    <Icon as={SiInstagram} />
+                </Link>
+            </VStack>
+        </Flex>
     );
 };
 
-const MobileNavItem = ({ label, children, href }) => {
-    const { isOpen, onToggle } = useDisclosure();
+const MobileNavItem = ({ label, href }) => {
 
     return (
-        <Stack spacing={4} onClick={children && onToggle}>
-            <Flex
-                py={2}
-                as={Link}
-                href={href ?? "#"}
-                justify={"space-between"}
-                align={"center"}
-                _hover={{
-                    textDecoration: "none",
-                }}>
-                <Text
-                    fontWeight={600}
-                    color="gray.600"
-                >
-                    {label}
-                </Text>
-                {children && (
-                    <Icon
-                        as={ChevronDownIcon}
-                        transition={"all .25s ease-in-out"}
-                        transform={isOpen ? "rotate(180deg)" : ""}
-                        w={6}
-                        h={6}
-                    />
-                )}
-            </Flex>
-
-            <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
-                <Stack
-                    mt={2}
-                    pl={4}
-                    borderLeft={1}
-                    borderStyle={"solid"}
-                    borderColor="gray.200"
-                    align={"start"}>
-                    {children &&
-                        children.map((child) => (
-                            <Link key={child.label} py={2} href={child.href}>
-                                {child.label}
-                            </Link>
-                        ))}
-                </Stack>
-            </Collapse>
-        </Stack>
+        <Flex
+            my={5}
+            direction="column"
+            as={Link}
+            href={href ?? "#"}
+            justifyContent="space-between"
+            alignItems="center"
+            _hover={{
+                textDecoration: "none",
+            }}>
+            <Text
+                fontWeight={600}
+                color="gray.600"
+            >
+                {label}
+            </Text>
+        </Flex>
     );
 };
 
@@ -188,21 +183,5 @@ const NAV_ITEMS = [
         label: "Post",
         href: "/post",
     },
-    // {
-    //     label: "Category",
-    //     href: "#",
-    //     children: [
-    //         {
-    //             label: "Basic",
-    //             subLabel: "Trending Design to inspire you",
-    //             href: "/category/basic",
-    //         },
-    //         {
-    //             label: "Learn",
-    //             subLabel: "Up-and-coming Designers",
-    //             href: "/category/learn",
-    //         },
-    //     ],
-    // },
 
 ];

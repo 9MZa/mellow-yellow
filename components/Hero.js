@@ -1,11 +1,21 @@
-import { Text, Heading, Box, SimpleGrid, Flex, Stack, toast } from "@chakra-ui/react";
+import {
+    Text,
+    Heading,
+    Box,
+    Flex,
+    Stack
+} from "@chakra-ui/react";
 import HeroImg from "public/hero.svg";
 import NextImage from "next/image";
 
-
 const HeroIndexPage = () => {
     return (
-        <Box bgColor="gray.100" py={10} >
+        <Box
+            bgColor="gray.100"
+            px={{ base: 5, md: 10, lg: 0 }}
+            pb={{ base: 10, md: 0 }}
+            textAlign={{ base: "center", md: "left" }}
+        >
             <Box maxW="container.lg" mx="auto">
                 <Flex
                     alignItems="center"
@@ -13,10 +23,11 @@ const HeroIndexPage = () => {
                 >
                     <Box
                         w={{ base: "100%", md: "50%" }}
+                        mt={{ base: -5, md: 0 }}
                     >
-                        <Stack spacing={10}>
+                        <Stack spacing={{ base: 5, md: 5, lg: 7 }}>
                             <Heading
-                                size="2xl"
+                                fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
                                 color="dark.500"
                             >
                                 Adipisicing aliqua consequat deserunt.
@@ -27,8 +38,10 @@ const HeroIndexPage = () => {
                         </Stack>
                     </Box>
                     <Flex
-                        w={{ base: "100%", md: "50%" }}
                         justifyContent="end"
+                        w={{ base: "100%", md: "50%" }}
+                        mt={{ base: -14, md: 0 }}
+                        zIndex={0}
                     >
                         <Box
                             position="relative"
@@ -37,9 +50,7 @@ const HeroIndexPage = () => {
                         >
                             <NextImage src={HeroImg} layout="fill" />
                         </Box>
-
                     </Flex>
-
                 </Flex>
             </Box>
         </Box>

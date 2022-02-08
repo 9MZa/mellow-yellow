@@ -18,6 +18,7 @@ const Footer = () => {
             as="footer"
             borderTopWidth={1}
             py={4}
+            px={{ base: 0, md: 10, lg: 0 }}
             color="dark.200"
         >
             <Box
@@ -26,9 +27,14 @@ const Footer = () => {
                 fontWeight="medium"
             >
 
-                <Flex spacing={5} justifyContent="space-between">
+                <Flex
+                    spacing={5}
+                    justifyContent={{ md: "space-between" }}
+                    flexDirection={{ base: "column-reverse", md: "row" }}
+                    alignItems={{ base: "center" }}
+                >
                     <HStack>
-                        <Box color="dark.500">
+                        <Box color="dark.500" textAlign={{ base: "center", md: "left" }} >
                             <HStack alignItems="baseline">
                                 <Heading size="lg">mellow</Heading>
                                 <Heading
@@ -37,12 +43,11 @@ const Footer = () => {
                                 >
                                     yellow
                                 </Heading>
-
                             </HStack>
                             <Text
                                 color="dark.100"
                                 fontWeight="normal"
-                                fontSize="sm"
+                                fontSize={{ base: "xs", md: "sm" }}
                             >
                                 &copy;&nbsp;2022&nbsp;All Rights Reserved
                             </Text>
@@ -53,6 +58,8 @@ const Footer = () => {
                         fontWeight="normal"
                         color="dark.100"
                         fontSize="sm"
+                        my={5}
+                        flexDirection={{ base: "column", md: "row" }}
                     >
                         <Text>Follow us:</Text>
                         <HStack spacing={0}>
@@ -93,20 +100,6 @@ const Footer = () => {
                                     }}
                                 >
                                     <Icon as={SiInstagram} />
-                                </Box>
-                            </Link>
-
-                            <Link href="">
-                                <Box
-                                    as="button"
-                                    w="10"
-                                    h="10"
-                                    transition="all .3s ease-out "
-                                    _hover={{
-                                        bgColor: "primary.200",
-                                    }}
-                                >
-                                    <Icon as={FaLinkedinIn} />
                                 </Box>
                             </Link>
                         </HStack>
