@@ -7,7 +7,6 @@ import { NextSeo } from "next-seo";
 import {
   Box,
   Flex,
-  HStack
 } from "@chakra-ui/react";
 
 const FilterButton = ({ btnName, filter }) => {

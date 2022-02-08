@@ -1,4 +1,3 @@
-import dayjs from "dayjs";
 import { gql } from "@apollo/client";
 import client from "@/lib/apolloClient";
 import { Box, Heading, Stack, Text, Flex, HStack, Divider } from "@chakra-ui/react";

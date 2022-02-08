@@ -4,7 +4,6 @@ export const Button = {
         fontWeight: "bold",
         textTransform: "capitalize",
     },
-    // Two sizes: sm and md
     sizes: {
         sm: {
             fontSize: "sm",
@@ -17,7 +16,6 @@ export const Button = {
             py: 4,
         },
     },
-
     variants: {
         outline: {
             border: "2px",
@@ -47,7 +45,6 @@ export const Button = {
             },
         },
     },
-
     defaultProps: {
         size: "md",
         variant: "solid",
