@@ -204,7 +204,7 @@ const NAV_ITEMS = [
     },
 ];
 
-const SocialMediaItems = [
+export const SocialMediaItems = [
     {
         name: "Facebook",
         icon: "logo-facebook",

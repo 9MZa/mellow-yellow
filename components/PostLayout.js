@@ -1,8 +1,7 @@
 import {
     Box,
     SimpleGrid,
-    Button,
-    Flex, Icon
+    Flex,
 } from "@chakra-ui/react";
 import { ReadButton } from "@/components/ReadMore";
 import { CommonCard, WideCard, Big } from "@/components/Card";

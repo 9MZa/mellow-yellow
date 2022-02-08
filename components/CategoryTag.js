@@ -1,6 +1,4 @@
 import {
-    HStack,
-    Box,
     Text,
     Flex,
     Button
@@ -23,8 +21,6 @@ export const CategoryText = ({ name, slug }) => {
         </NextLink>
     );
 };
-
-
 
 export const CategoryBox = ({ name, slug }) => {
     return (

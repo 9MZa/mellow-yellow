@@ -1,15 +1,13 @@
 import {
     Box,
     Text,
-    Icon,
     HStack,
     Flex,
     Heading,
-    Link
 } from "@chakra-ui/react";
-import { FaTwitter, } from "@react-icons/all-files/fa/FaTwitter";
-import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
-import { SiInstagram } from "@react-icons/all-files/si/SiInstagram";
+
+import { SocialMediaItems } from "./Navbar";
+import NextLink from "next/link";
 
 const Footer = () => {
     return (
@@ -74,45 +72,28 @@ const Footer = () => {
                         <HStack
                             spacing={0}
                         >
-                            <Link href="">
-                                <Box
-                                    as="button"
-                                    w="10"
-                                    h="10"
-                                    transition="all .3s ease-out "
-                                    _hover={{
-                                        bgColor: "primary.200",
-                                    }}
-                                >
-                                    <Icon as={FaFacebookF} />
-                                </Box>
-                            </Link>
-                            <Link href="">
-                                <Box
-                                    as="button"
-                                    w="10"
-                                    h="10"
-                                    transition="all .3s ease-out "
-                                    _hover={{
-                                        bgColor: "primary.200",
-                                    }}
-                                >
-                                    <Icon as={FaTwitter} />
-                                </Box>
-                            </Link>
-                            <Link href="">
-                                <Box
-                                    as="button"
-                                    w="10"
-                                    h="10"
-                                    transition="all .3s ease-out "
-                                    _hover={{
-                                        bgColor: "primary.200",
-                                    }}
-                                >
-                                    <Icon as={SiInstagram} />
-                                </Box>
-                            </Link>
+                            {SocialMediaItems.map((item, i) => {
+                                return (
+                                    <NextLink key={i} href={item.href} passHref>
+                                        <a>
+                                            <Box
+                                                as="button"
+                                                fontSize="lg"
+                                                h={10}
+                                                w={10}
+                                                transition="all .3s ease-out "
+                                                _hover={{
+                                                    bgColor: "primary.200",
+                                                }}
+                                            >
+                                                <Box mt={1}>
+                                                    <ion-icon name={item.icon}></ion-icon>
+                                                </Box>
+                                            </Box>
+                                        </a>
+                                    </NextLink>
+                                );
+                            })}
                         </HStack>
                     </Flex>
                 </Flex>

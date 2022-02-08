@@ -1,4 +1,9 @@
-import { Box, Text, Heading, Flex, Button, Icon } from "@chakra-ui/react";
+import {
+    Text,
+    Flex,
+    Button,
+    Icon
+} from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import NextLink from "next/link";
 

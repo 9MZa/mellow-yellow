@@ -1,5 +1,4 @@
 export const Button = {
-    // The styles all button have in common
     baseStyle: {
         rounded: "0px",
         fontWeight: "bold",
