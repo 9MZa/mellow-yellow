@@ -1,7 +1,5 @@
 # Mellow Yellow Complete Blog
 
-Thanks for purchasing this project. This document covers the installation and use of this project. If you have any questions you can email me at bds_si@hotmail.com Thank you so much!
-
 ## Key Features
 
 - Next.js in version 12
